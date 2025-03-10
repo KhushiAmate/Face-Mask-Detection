@@ -65,7 +65,7 @@ def predict_mask_from_image(image):
     image = np.array(image, dtype="float32") / 255.0
     image = np.expand_dims(image, axis=0)
     predictions = model.predict(image)
-    mask_label = 'Mask' if predictions[0][0] > 0.5 else 'No Mask'
+    mask_label = 'Mask' if predictions[0][0] > 0.7 else 'No Mask'
     return mask_label
 
 # Main function to run the Flask app
